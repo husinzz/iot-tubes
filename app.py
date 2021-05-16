@@ -36,7 +36,6 @@ time.sleep(5)
 xAxis.loop_stop();
 yAxis.loop_stop();
 
-print(xList)
-print(yList)
+
 
 
