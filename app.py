@@ -11,11 +11,11 @@ yList = [];
 Roll = [];
 
 def on_messageX(client, userdata, message):
-  print("xMessage recevied");
+  # print("xMessage recevied");
   xList.insert(0,float(message.payload.decode("utf-8")));
 
 def on_messageY(client, userdata, message):
-  print("yMessage recevied");
+  # print("yMessage recevied");
   yList.insert(0,float(message.payload.decode("utf-8")));
 
 def getRoll(xList,yList):
@@ -35,13 +35,27 @@ while True:
   xAxis.subscribe("topic/Gyroscope/x") # sub ke topic, sesuai sama yang di set di 
   yAxis.subscribe("topic/Gyroscope/y") # sensor node
 
-  time.sleep(3) # delay buat nuggu masuk gyro, sesuai sama delay gyro di sensor node
+  time.sleep(1) # delay buat nuggu masuk gyro, sesuai sama delay gyro di sensor node
 
   xAxis.loop_stop();
   yAxis.loop_stop();
 
   Roll.insert(0,getRoll(xList,yList))
-  print(Roll[0])
+  Temp = -9999
+
+  if ((Roll[0] < -2)):
+    print("Bongkok")
+    
+    if (Temp != Roll[0]):
+      print(Roll[0])
+    Temp = Roll[0]
+  else:
+    print("Tegak")
+
+    if (Temp != Roll[0]):
+      print(Roll[0])
+    Temp = Roll[0]
+    
 
   # print(xList)
   # print(yList)
