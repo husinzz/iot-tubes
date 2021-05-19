@@ -58,13 +58,6 @@ xAxis.connect(addr,port=port) # menghubungkan dengan broker ( Mosquito yang skrn
 yAxis.connect(addr,port=port)
 zAxis.connect(addr,port=port)
 
-# topic = [["Accelerometer","x","y","z"]]
-
-# for i in range(3):
-
-
-
-
 while True:
   xAxis.loop_start(); # awal loop
   yAxis.loop_start();
