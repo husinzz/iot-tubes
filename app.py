@@ -64,17 +64,17 @@ while True:
     # os.system('clear')
     getData()
     if (xList != []) & (yList != []) & (zList != []):
-        print(getRoll(yList[0], zList[0]))
+        roll = getRoll(yList[0], zList[0])
         # print(len(xList), len(yList), len(zList))
 
-        if (getRoll(yList[0], zList[0]) > 75) and (getRoll(yList[0], zList[0]) < 70):
+        if (roll > 75) and (roll < 70):
             # os.system("clear")
             print('Youre good')
-        elif (getRoll(yList[0], zList[0]) > 71) and (getRoll(yList[0], zList[0]) < 95):
+        elif (roll > 71) and (roll < 95):
             # os.system("clear")
             beepy.beep(sound=1)
             print('Correct your posture')
-        elif (getRoll(yList[0], zList[0]) > 96):
+        elif (roll > 96):
             # os.system("clear")
             beepy.beep(sound=2)
             print("Youre posture is broken")
