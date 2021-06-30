@@ -66,15 +66,19 @@ while True:
     if (xList != []) & (yList != []) & (zList != []):
         roll = getRoll(yList[0], zList[0])
         # print(len(xList), len(yList), len(zList))
+        print(roll)
 
-        if (roll > 75) and (roll < 70):
+        if (roll > 60) and (roll < 85):
             # os.system("clear")
             print('Youre good')
-        elif (roll > 71) and (roll < 95):
+            print(roll)
+        elif (roll > 86) and (roll < 95):
             # os.system("clear")
             beepy.beep(sound=1)
+            print(roll)
             print('Correct your posture')
         elif (roll > 96):
             # os.system("clear")
             beepy.beep(sound=2)
+            print(roll)
             print("Youre posture is broken")
